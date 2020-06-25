@@ -256,6 +256,7 @@ impl CoreType {
     }
 }
 
+#[derive(Debug)]
 pub struct CoreState {
     breakpoints: Vec<Breakpoint>,
 }
@@ -268,6 +269,7 @@ impl CoreState {
     }
 }
 
+#[derive(Debug)]
 pub(crate) enum SpecificCoreState {
     M3(CortexState),
     M4(CortexState),
@@ -545,7 +547,7 @@ impl BreakpointId {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Breakpoint {
     address: u32,
     register_hw: usize,
